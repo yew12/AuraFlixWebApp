@@ -1,0 +1,74 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@font-face {
+  font-family: "FugazOne-Regular";
+  src: url("../fonts/FugazOne-Regular.ttf");
+}
+
+/* Bootstrap elements will follow this, but this one targets a specific class */
+.fugaz-font {
+  font-family: "FugazOne-Regular", sans-serif;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Featured Flix */
+.floating-div {
+  height: 65vh; /* 60% of the viewport height */
+  max-height: 65vw;
+  margin: 0 auto; /* Centers the div horizontally */
+  background-color: #f7f7f7; 
+  border-radius: 10px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Horizontal offset, vertical offset, blur radius, and shadow color */
+  display: flex;
+  /* justify-content: center; */
+  padding-top: 2%;
+  padding-inline: 2%;
+  flex-direction: column;
+}
+
+.headerDiv {
+  display: flex;
+  align-content: flex-start;
+}
+
+.moviesListDiv {
+
+}
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+
+.movie-poster {
+  width: 100%;          /* Matches card width */
+  height: auto;        /* Adjust height to fit design */
+  object-fit: cover;    /* Fills space, crops excess */
+  border-radius: 5px;
+}
+.card-title {
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

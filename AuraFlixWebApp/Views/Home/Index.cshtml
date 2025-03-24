@@ -1,0 +1,161 @@
+﻿@model IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 style="color:#005a42;" class="display-4 fw-bold fugaz-font">AuraFlix</h1>
+
+    @* FEATURED *@
+    <div id="featuredFlix" class="floating-div" >
+        <div class="headerDiv" >
+            <h2>Featured Flix</h2>
+        </div>
+        <div id="carouselFeatured" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">                     
+                @{
+                    IEnumerable<Movie[]> movieSublist = Model.PopularMovies.Chunk(4);
+                    int index = 1;
+                    foreach(var list in movieSublist)
+                    {
+                        <div class="carousel-item @(index == 1 ? "active" : "")">
+                            <div class="moviesListDiv row d-flex pt-3 px-5 row justify-content-around ">
+                                @foreach(var movie in list)
+                                {
+                                    <div class="" style="width: 15rem;">
+                                        <img src="@movie.PosterUrl" class="movie-poster" alt="@movie.Title">
+                                        <div class="card-body">
+                                            <h5 class="card-title">@movie.Title</h5>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        index++;
+                    }
+                }
+            </div>
+           <button class="carousel-control-prev w-auto p-1" type="button" data-bs-target="#carouselFeatured" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next w-auto p-1" type="button" data-bs-target="#carouselFeatured" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+
+    @* TOP RATED *@
+    <div class="pt-5" >
+        <div class="headerDiv">
+            <h2>Top Rated</h2>
+        </div>
+        <div class="moviesListDiv row d-flex w-100 pt-3 pb-3 justify-content-between ">
+            <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+            <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+             <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+             <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* YOUR RATINGS *@
+    <div class="pt-5">
+        <div class="headerDiv">
+            <h2>Your Top Ratings</h2>
+        </div>
+        <div class="moviesListDiv row d-flex w-100 pt-3 pb-3 justify-content-between ">
+            <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+            <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+             <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+             <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+        </div>
+    </div>
+
+     @* YOUR Movies you hated *@
+    <div class="pt-5">
+        <div class="headerDiv">
+            <h2>These are Movies You F*cking Hate</h2>
+        </div>
+        <div class="moviesListDiv row d-flex w-100 pt-3 pb-3 justify-content-between ">
+            <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+            <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+             <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+             <div class="card rounded" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
